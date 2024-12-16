@@ -50,8 +50,8 @@ corpoTabela.innerHTML = linhas;}
 function atualizaMediaFinal() {
     const mediafinal = calculaMediaFinal();
 
-    document.getElementById('media-final-valor').innerHTML = mediafinal;
-    document.getElementById('media-final-resultado').innerHTML = mediafinal >= 7 ? spanAprovado : spanReprovado;
+    document.getElementById('media-final-valor').innerHTML = mediafinal.tofixed(2);
+    document.getElementById('media-final-resultado').innerHTML = mediafinal.tofixed(2) >= notaMinima ? spanAprovado : spanReprovado;
 
 }
 
