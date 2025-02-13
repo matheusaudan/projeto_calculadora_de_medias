@@ -25,7 +25,7 @@ const inputNotaAtividade = document.getElementById('nota-atividade');
 
 if(atividades.includes(inputNomeAtividade.value)) {
     alert(` A atividade: ${inputNomeAtividade.value} já foi inserida`)
-    } else {
+} else {
 
 atividades.push(inputNomeAtividade.value);
 notas.push (parseFloat(inputNotaAtividade.value));
@@ -37,7 +37,7 @@ linha += `<td> ${inputNotaAtividade.value >= notaMinima ? imgAprovado : imgRepro
 linha += `</tr>` ;
 
 linhas += linha;
-    }
+}
 
 inputNomeAtividade.value = ''
 inputNotaAtividade.value = ''
@@ -50,9 +50,8 @@ corpoTabela.innerHTML = linhas;}
 function atualizaMediaFinal() {
     const mediafinal = calculaMediaFinal();
 
-    document.getElementById('media-final-valor').innerHTML = mediafinal.tofixed(2);
-    document.getElementById('media-final-resultado').innerHTML = mediafinal.tofixed(2) >= notaMinima ? spanAprovado : spanReprovado;
-
+    document.getElementById('media-final-valor').innerHTML = mediafinal.toFixed(2);
+    document.getElementById('media-final-resultado').innerHTML = mediafinal >= notaMinima ? spanAprovado : spanReprovado;
 }
 
 function calculaMediaFinal() {
